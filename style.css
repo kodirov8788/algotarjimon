@@ -45,6 +45,7 @@ button {
    margin: 0 auto;
    height: 80%;
    border-radius: 20px;
+   position: relative;
 }
 
 h2 {
@@ -78,4 +79,32 @@ h1,
 h2 {
    text-align: center;
    margin: 10px;
+}
+
+.box_ichida {
+   width: 100%;
+   justify-content: space-between;
+   padding: 0 50px;
+   display: flex;
+   /* border: 3px solid red; */
+   position: absolute;
+   bottom: 100px;
+
+}
+
+.box_ichida>img {
+   width: 150px;
+   height: auto;
+   margin: 20px;
+   border-radius: 8px;
+}
+
+.card {
+   width: 300px;
+   height: auto;
+   margin: 20px;
+   border-radius: 8px;
+   position: absolute;
+   top: 20px;
+   left: 35%;
 }

@@ -4,11 +4,27 @@ let btn1 = document.querySelector(".btn1")
 let btn2 = document.querySelector(".btn2")
 let label = document.querySelector("label")
 let h3Natija = document.querySelector(".natija")
+let box = document.querySelector(".box")
 btn1.style.display = "none"
+let box_ichida = document.querySelector(".box_ichida")
 let lang = false
+
+let UsaFlag = document.createElement("img")
+let UzbFlag = document.createElement("img")
+UsaFlag.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/2560px-Flag_of_the_United_States.svg.png"
+UzbFlag.src = 'https://cdn.britannica.com/47/7247-004-44F420D7/Flag-Uzbekistan.jpg'
+
+box_ichida.appendChild(UsaFlag)
+box_ichida.appendChild(UzbFlag)
+
+btn1.addEventListener("keypress", (e) => {
+   console.log("sadsad", e.key);
+})
 
 function Changelanguage() {
    if (lang === false) {
+      UsaFlag.src = "https://cdn.britannica.com/47/7247-004-44F420D7/Flag-Uzbekistan.jpg"
+      UzbFlag.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/2560px-Flag_of_the_United_States.svg.png"
       btn1.style.display = "block"
       btn2.style.display = "none"
       lang = true
@@ -16,19 +32,21 @@ function Changelanguage() {
       h3Natija.innerHTML = 'English Language'
       Input.value = ""
       H2.innerHTML = ""
+
    } else {
+      UsaFlag.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/2560px-Flag_of_the_United_States.svg.png"
+      UzbFlag.src = 'https://cdn.britannica.com/47/7247-004-44F420D7/Flag-Uzbekistan.jpg'
       label.innerHTML = 'English Language'
       h3Natija.innerHTML = 'Uzbek tili'
-
       btn1.style.display = "none"
       btn2.style.display = "block"
       lang = false
       Input.value = ""
       H2.innerHTML = ""
 
-
    }
 }
+let natija
 
 function EngToUzb() {
    let value = Input.value.toLowerCase()
@@ -38,6 +56,7 @@ function EngToUzb() {
    switch (value) {
       case "elephant":
          natija = "fil"
+         IMAGE.src = "https://images.pexels.com/photos/1054655/pexels-photo-1054655.jpeg"
          break;
       case "enjoy":
          natija = "rohatlaning"
@@ -47,6 +66,7 @@ function EngToUzb() {
          break
       case "apple":
          natija = "olma"
+         IMAGE.src = "https://m.media-amazon.com/images/I/918YNa3bAaL._SX679_.jpg"
          break
       case "home":
          natija = "uy"
@@ -1012,21 +1032,30 @@ function EngToUzb() {
    console.log();
 }
 
+
+let IMAGE = document.createElement("img");
+IMAGE.className = "card"
+box.appendChild(IMAGE)
+
+IMAGE.src = "https://cdn-0.therandomvibez.com/wp-content/uploads/2020/09/Feeling-Empty-Quotes-1.jpg"
+
 function UzbToEng() {
    let value = Input.value.toLowerCase()
-   let natija
    switch (value) {
       case "fil":
          natija = "elephant"
+         IMAGE.src = "https://images.pexels.com/photos/1054655/pexels-photo-1054655.jpeg"
          break;
       case "olma":
-         natija = "Apple"
+         natija = "apple"
+         IMAGE.src = "https://m.media-amazon.com/images/I/918YNa3bAaL._SX679_.jpg"
          break;
-
       default:
          natija = "hech narsa yo'q"
          break;
    }
    H2.innerHTML = " " + natija
+
+
    console.log("EngToUzb");
 }
